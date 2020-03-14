@@ -21,7 +21,9 @@ docker build --network host -t <your docker image> .
 ```
 
 3. Run a docker container for testing:
-`docker run -itd --privileged -p 179:179 <your imaghe>`
+```
+docker run -itd --privileged -p 179:179 <your imaghe>
+```
 
 4. Run a simple lab for testing:
 ```
