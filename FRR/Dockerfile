@@ -4,7 +4,7 @@ LABEL maintainer="paul.mao@citrix.com"
 # Trigger rebuild
 ENV         UPDATED_AT 2020-03-09
 
-# Install Quagga
+# Install Software
 RUN     apk update \
 			--repository http://dl-cdn.alpinelinux.org/alpine/v3.10/main \
 			--repository http://dl-cdn.alpinelinux.org/alpine/v3.10/community \
