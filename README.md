@@ -30,3 +30,9 @@ docker run -itd --privileged -p 179:179 <your imaghe>
 cd ..
 docker-compose up 
 ```
+
+5. Run a ospf-eigrp redistribution lab using scripts:
+```
+perl ospf-igrp.pl -n 2 > docker-compose.yml
+docker-compose up 
+```
