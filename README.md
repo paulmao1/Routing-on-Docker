@@ -36,3 +36,9 @@ docker-compose up
 perl ospf-igrp.pl -n 2 > docker-compose.yml
 docker-compose up 
 ```
+6. Monitor router usage using Prometheus and Grafana
+```
+docker run --name cadvisor --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro -p 8080:8080 -d  google/cadvisor:latest
+docker run -d -p 9090:9090 --name prometheus  -v $PWD/monitor/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+docker run -d -p 3000:3000 --name grafana grafana/grafana
+```
