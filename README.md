@@ -33,7 +33,8 @@ docker-compose up
 
 5. Run a ospf-eigrp redistribution lab using scripts:
 ```
-perl ospf-igrp.pl -n 2 > docker-compose.yml
+cd  OSPF-EIGRP
+perl ospf-eigrp.pl -n 2 > docker-compose.yml
 docker-compose up 
 ```
 6. Monitor router usage using Prometheus and Grafana
@@ -41,4 +42,10 @@ docker-compose up
 docker run --name cadvisor --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro -p 8080:8080 -d  google/cadvisor:latest
 docker run -d -p 9090:9090 --name prometheus  -v $PWD/monitor/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 docker run -d -p 3000:3000 --name grafana grafana/grafana
+```
+7. Run a EVPN lab using  scripts
+```
+cd  EVPN
+perl evpn.pl -n 3 > docker-compose.yml
+docker-compose up 
 ```
